@@ -1,0 +1,21 @@
+D:\Dev\Iks_ASConvert-1.1.0\VipConverBuild\Debug\net7.0\vipConvert.deps.json
+D:\Dev\Iks_ASConvert-1.1.0\VipConverBuild\Debug\net7.0\vipConvert.dll
+D:\Dev\Iks_ASConvert-1.1.0\VipConverBuild\Debug\net7.0\vipConvert.pdb
+D:\Dev\Iks_ASConvert-1.1.0\obj\Debug\net7.0\vipConvert.csproj.AssemblyReference.cache
+D:\Dev\Iks_ASConvert-1.1.0\obj\Debug\net7.0\vipConvert.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\Iks_ASConvert-1.1.0\obj\Debug\net7.0\vipConvert.AssemblyInfoInputs.cache
+D:\Dev\Iks_ASConvert-1.1.0\obj\Debug\net7.0\vipConvert.AssemblyInfo.cs
+D:\Dev\Iks_ASConvert-1.1.0\obj\Debug\net7.0\vipConvert.csproj.CoreCompileInputs.cache
+D:\Dev\Iks_ASConvert-1.1.0\obj\Debug\net7.0\vipConvert.dll
+D:\Dev\Iks_ASConvert-1.1.0\obj\Debug\net7.0\refint\vipConvert.dll
+D:\Dev\Iks_ASConvert-1.1.0\obj\Debug\net7.0\vipConvert.pdb
+D:\Dev\Iks_ASConvert-1.1.0\obj\Debug\net7.0\ref\vipConvert.dll
+D:\Dev\vipConvert RELEASE\obj\Debug\net7.0\vipConvert.csproj.AssemblyReference.cache
+D:\Dev\vipConvert RELEASE\obj\Debug\net7.0\vipConvert.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\vipConvert RELEASE\obj\Debug\net7.0\vipConvert.AssemblyInfoInputs.cache
+D:\Dev\vipConvert RELEASE\obj\Debug\net7.0\vipConvert.AssemblyInfo.cs
+D:\Dev\vipConvert RELEASE\obj\Debug\net7.0\vipConvert.csproj.CoreCompileInputs.cache
+D:\Dev\vipConvert RELEASE\obj\Debug\net7.0\vipConvert.dll
+D:\Dev\vipConvert RELEASE\obj\Debug\net7.0\refint\vipConvert.dll
+D:\Dev\vipConvert RELEASE\obj\Debug\net7.0\vipConvert.pdb
+D:\Dev\vipConvert RELEASE\obj\Debug\net7.0\ref\vipConvert.dll
