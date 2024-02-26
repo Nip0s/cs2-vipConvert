@@ -1,3 +1,6 @@
+## Контакты
+Если вы нашли какой-то баг или ошибку, напишите мне в дискорде: NiPos
+
 ## vipConvert
 Плагин конвертирует вип группы из таблицы vip_users в css теги. <br/>
 - 100% работает с [[VIP] Core от Pisex](https://github.com/Pisex/cs2-vip).<br/>
@@ -5,6 +8,7 @@
 
 ## Установка
 **Предупреждение:** При использовании вместе с [IKS_ASConvert](https://github.com/Iksix/Iks_ASConvert/releases/tag/1.00) обязательно устанавливайте версию IKS_ASConvert из архива
+- Загрузить [последний релиз](https://github.com/Nip0s/cs2-vipConvert/releases)
 - Закинуть папку vipConvert в addons/counterstrikesharp/plugins
 - Закинуть папку Iks_ASConvert addons/counterstrikesharp/plugins
 
