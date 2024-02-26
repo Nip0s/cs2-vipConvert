@@ -3,15 +3,15 @@
 Плагин конвертирует вип группы из таблицы vip_users в css теги. <br/>
 - 100% работает с [[VIP] Core от Pisex](https://github.com/Pisex/cs2-vip).<br/>
 - [[VIP] Core on CSSharp](https://github.com/partiusfabaa/cs2-VIPCore) не проверял, но должно тоже работать<br/>
-<br/>
 
 **Если вы нашли какой-то баг или ошибку, напишите мне в дискорде: NiPos**
 
 ## Установка
-**Предупреждение:** При использовании вместе с [IKS_ASConvert](https://github.com/Iksix/Iks_ASConvert/releases/tag/1.00) обязательно устанавливайте версию IKS_ASConvert из архива
 - Загрузить [последний релиз](https://github.com/Nip0s/cs2-vipConvert/releases)
 - Закинуть папку vipConvert в addons/counterstrikesharp/plugins
-- Закинуть папку Iks_ASConvert addons/counterstrikesharp/plugins
+- Закинуть папку Iks_ASConvert addons/counterstrikesharp/plugins<br/>
+
+**Предупреждение:** При использовании вместе с [IKS_ASConvert](https://github.com/Iksix/Iks_ASConvert/releases/tag/1.00) обязательно устанавливайте версию IKS_ASConvert из архива
 
 ## Конфиг
 Автоматически генерируется по пути addons/counterstrikesharp/configs/plugins
