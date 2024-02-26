@@ -1,10 +1,10 @@
 ## vipConvert
-Плагин конвертирует випгруппы в css теги. 
-100% работает с [VIP] Core от Pisex.
-[VIP] Core on CSSharp от thesamefabius, но должно тоже работать
+Плагин конвертирует вип группы из таблицы vip_users в css теги. <br/>
+- 100% работает с [[VIP] Core от Pisex](https://github.com/Pisex/cs2-vip).<br/>
+- [[VIP] Core on CSSharp](https://github.com/partiusfabaa/cs2-VIPCore) не проверял, но должно тоже работать<br/>
 
 ## Установка
-**Предупреждение:** При использовании вместе с IKS_ASConvert обязательно устанавливайте версию IKS_ASConvert из архива
+**Предупреждение:** При использовании вместе с [IKS_ASConvert](https://github.com/Iksix/Iks_ASConvert/releases/tag/1.00) обязательно устанавливайте версию IKS_ASConvert из архива
 - Закинуть папку vipConvert в addons/counterstrikesharp/plugins
 - Закинуть папку Iks_ASConvert addons/counterstrikesharp/plugins
 
@@ -33,3 +33,7 @@
   "ConfigVersion": 1
 }
 ```
+
+## Варианты использования
+Конвертировать группу в определенный флаг и использовать его для установки тегов в чате игрокам. <br/>
+Я для этой цели использую: [Chat manager](https://github.com/BMathers35/CS2-ChatManager)
