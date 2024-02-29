@@ -1,7 +1,9 @@
 ﻿using System.Data;
+using System.Linq;
 using System.Numerics;
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Admin;
 using CounterStrikeSharp.API.Modules.Commands;
@@ -13,18 +15,20 @@ using MySqlConnector;
 
 
 namespace Iks_VIPConvert;
+[EventName("round_start")]
 
 public class vipConvert : BasePlugin, IPluginConfig<PluginConfig>
 {
     public override string ModuleName => "vipConvert";
 
-    public override string ModuleVersion => "1.0.0";
+    public override string ModuleVersion => "1.0.1";
     public override string ModuleAuthor => "iks x nipos";
 
     private string _dbConnectionString = "";
 
    public PluginConfig Config { get; set; }
 
+   
     public void OnConfigParsed(PluginConfig config)
     {
         _dbConnectionString = "Server=" + config.host + ";Database=" + config.database
@@ -35,12 +39,25 @@ public class vipConvert : BasePlugin, IPluginConfig<PluginConfig>
             await SetFlagsToVips();
         });
         Config = config;
+        RegisterEventHandler<EventRoundStart>(EventRoundStart);
+
+    }
+
+
+    private HookResult EventRoundStart(EventRoundStart @event, GameEventInfo info)
+    {
+        // Выполняем действия в начале раунда
+        Task.Run(async () =>
+        {
+            await SetFlagsToVips();
+        });
+        return HookResult.Continue;
     }
 
     public async Task SetFlagsToVips()
     {
         List<Admin> admins = new List<Admin>();
-        string sql = $@"SELECT * FROM vip_users WHERE expires>{DateTimeOffset.UtcNow.ToUnixTimeSeconds()} OR expires=0;";
+        string sql = $@"SELECT * FROM vip_users WHERE (expires > {DateTimeOffset.UtcNow.ToUnixTimeSeconds()} OR expires = 0) AND sid = {Config.sid}";
         try
         {
             using (var connection = new MySqlConnection(_dbConnectionString))
@@ -70,7 +87,44 @@ public class vipConvert : BasePlugin, IPluginConfig<PluginConfig>
     {
         foreach (var admin in admins)
         {
+            // Получаем данные администратора, включая его разрешения
+            var adminData = AdminManager.GetPlayerAdminData(admin.Steamid);
+
+            // Проверяем, получены ли данные администратора
+            if (adminData != null)
+            {
+                // Получаем разрешения администратора
+                var existingFlags = adminData.Flags;
+
+                // Создаем список флагов для удаления
+                List<string> flagsToRemove = new List<string>();
+
+                // Проверяем каждое текущее разрешение администратора
+                foreach (var kvp in existingFlags)
+                {
+                    var flagSet = kvp.Value;
+                    // Проверяем каждый флаг внутри набора
+                    foreach (var flag in flagSet)
+                    {
+                        // Если разрешение администратора было добавлено плагином, добавляем его в список для удаления
+                        if (IsPluginFlag(flag))
+                        {
+                            flagsToRemove.Add(flag);
+                        }
+                    }
+                }
+
+                // Удаляем только те разрешения, которые были добавлены плагином
+                foreach (var flag in flagsToRemove)
+                {
+                    AdminManager.RemovePlayerPermissions(admin.Steamid, flag);
+                }
+            }
+
+            // Проверяем, принадлежит ли администратор к нужному серверу
             if (admin.Sid != Config.sid) continue;
+
+            // Применяем конвертацию випов, если необходимо
             foreach (var vipflags in Config.ConvertVips)
             {
                 if (admin.VipFlags.Contains(vipflags.Key))
@@ -80,6 +134,21 @@ public class vipConvert : BasePlugin, IPluginConfig<PluginConfig>
                 }
             }
         }
+    }
+
+
+
+    // Проверяет, является ли данный флаг флагом, добавленным плагином
+    private bool IsPluginFlag(string flag)
+    {
+        foreach (var vipflags in Config.ConvertVips)
+        {
+            if (vipflags.Value.Contains(flag))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     [CommandHelper(whoCanExecute: CommandUsage.SERVER_ONLY)]
