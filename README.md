@@ -13,6 +13,10 @@
 
 **Предупреждение:** При использовании вместе с [IKS_ASConvert](https://github.com/Iksix/Iks_ASConvert/releases/tag/1.00) обязательно устанавливайте версию IKS_ASConvert из архива
 
+## Команды
+	
+**css_vip_convert** - обновляет флаги из базы данных
+
 ## Конфиг
 Автоматически генерируется по пути addons/counterstrikesharp/configs/plugins
 ```
