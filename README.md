@@ -2,7 +2,7 @@
 ## vipConvert
 Плагин конвертирует вип группы из таблицы vip_users в css теги. <br/>
 - 100% работает с [[VIP] Core от Pisex](https://github.com/Pisex/cs2-vip).<br/>
-- [[VIP] Core on CSSharp](https://github.com/partiusfabaa/cs2-VIPCore) не проверял, но должно тоже работать<br/>
+- Не работает с [[VIP] Core on CSSharp](https://github.com/partiusfabaa/cs2-VIPCore)<br/>
 
 **Если вы нашли какой-то баг или ошибку, напишите мне в дискорде: NiPos**
 
